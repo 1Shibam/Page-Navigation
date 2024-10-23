@@ -1,20 +1,17 @@
-// ignore_for_file: unused_field
-
-import 'package:clearing_basics_again/files/second.dart';
 import 'package:flutter/material.dart';
-import 'pay.dart';
-import 'poeples.dart';
-import 'mail.dart';
-import 'setting.dart';
+import 'package:clearing_basics_again/files/mail.dart';
+import 'package:clearing_basics_again/files/pay.dart';
+import 'package:clearing_basics_again/files/poeples.dart';
+import 'package:clearing_basics_again/files/setting.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Third extends StatefulWidget {
+  const Third({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Third> createState() => _ThirdState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ThirdState extends State<Third> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -98,24 +95,21 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Text(
-                'First Page',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-              ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: IconButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Second()));
+                      Navigator.pop(context);
                     },
                     icon: const Icon(
-                      Icons.arrow_forward,
+                      Icons.arrow_back,
                       size: 40,
                     )),
-              )
+              ),
+              const Text(
+                'Third Page',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),

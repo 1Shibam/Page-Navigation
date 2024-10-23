@@ -1,21 +1,20 @@
-// ignore_for_file: unused_field
-
-import 'package:clearing_basics_again/files/second.dart';
+import 'package:clearing_basics_again/files/mail.dart';
+import 'package:clearing_basics_again/files/pay.dart';
+import 'package:clearing_basics_again/files/poeples.dart';
+import 'package:clearing_basics_again/files/setting.dart';
+import 'package:clearing_basics_again/files/third.dart';
 import 'package:flutter/material.dart';
-import 'pay.dart';
-import 'poeples.dart';
-import 'mail.dart';
-import 'setting.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Second extends StatefulWidget {
+  const Second({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Second> createState() => _SecondState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SecondState extends State<Second> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,8 +97,19 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                    )),
+              ),
               const Text(
-                'First Page',
+                'Second Page',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               Padding(
@@ -109,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Second()));
+                              builder: (context) => const Third()));
                     },
                     icon: const Icon(
                       Icons.arrow_forward,
